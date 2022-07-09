@@ -70,7 +70,7 @@ section#main.debugEnabled {
 
 /* window tree rows */
 
-.ftRowNode[rowtype=window] > .ftItemRow {
+.ftRowNode[rowtype=window] > .ftItemRow { /* tab title */
 /*
     background: rgba(75, 95, 125, 1);*/
     background: none;
@@ -80,42 +80,44 @@ section#main.debugEnabled {
     padding-bottom: 0px;
     margin-bottom: 2px;
     height: 21px;
+    color: rgb(175, 210, 225);
 }
 
-.ftRowNode[rowtype=window][hibernated=true] > .ftItemRow {
-    background: #ddd;
+.ftRowNode[rowtype=window][hibernated=true] > .ftItemRow { /* hibernated tab title */
+    background: none;
 }
 
-.ftRowNode[rowtype=window][hibernated=true] > .ftItemRow:hover {
-    background: #e2e2e2;
+.ftRowNode[rowtype=window][hibernated=true] > .ftItemRow:hover { /* hibernated tab hover */
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(32, 84, 86)), color-stop(1, rgba(15, 35, 45, 1)));
 }
 
-.ftRowNode[rowtype=window] > .ftItemRow .ftItemTitle {
+.ftRowNode[rowtype=window] > .ftItemRow .ftItemTitle { /* tab title */
     font-style: italic;
 }
 
-.ftRowNode[rowtype=window] > .ftItemRow > .ftItemRowContent {
+.ftRowNode[rowtype=window] > .ftItemRow > .ftItemRowContent { /* expanded tab title */
     border: none;
     padding-left: 3px;
 }
 
-.ftRowNode[rowtype=window] > .ftItemRow:hover {
+.ftRowNode[rowtype=window] > .ftItemRow:hover { /* expanded tab title hover */
     background: #ffb;
 }
 
-.ftRowNode[rowtype=window] > .ftItemRow:hover > .ftItemRowContent {
+.ftRowNode[rowtype=window] > .ftItemRow:hover > .ftItemRowContent { /* expanded tab title hover */
     background: inherit;
     border: none;
     border-radius: 0;
 }
 
-.ftRowNode[rowtype=window] > .ftChildren {
+.ftRowNode[rowtype=window] > .ftChildren { /* loaded tab title */
     padding-top: 0px;
     margin-top: 0px;
     margin-left: -3px;
+    color: rgb(175, 210, 225);
 }
 
-.ftRowNode[rowtype=window] > .ftChildren:hover {
+.ftRowNode[rowtype=window] > .ftChildren:hover { /* loaded tab title hover */
     border-left: none;
     margin-left: -2px;
 }
@@ -256,16 +258,16 @@ section#main.debugEnabled {
 
 /* page tree rows */
 
-.ftRowNode[rowtype=page][unread=true] > .ftItemRow {
-    color: blue;
+.ftRowNode[rowtype=page][unread=true] > .ftItemRow { /* freshly opened, non-activated tabs */
+    color: rgb(200,210,170);
 }
 
 .ftRowNode[rowtype=page].closing > .ftItemRow {
     display: none;
 }
 
-.ftRowNode[rowtype=page][hibernated=true] > .ftItemRow > .ftItemRowContent {
-    color: hsl(0, 0%, 45%);
+.ftRowNode[rowtype=page][hibernated=true] > .ftItemRow > .ftItemRowContent { /* hibernated tabs */
+    color: hsl(0, 0%, 70%);
     font-style: italic;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(32, 84, 86)), color-stop(1, rgba(15, 35, 45, 1)));
 }
@@ -296,16 +298,18 @@ section#main.debugEnabled {
 /* row highlighting */
 
 .ftRowNode[highlighted=true]:not(.ftFocused):not(.ftSelected) > .ftItemRow > .ftItemRowContent {
-    background: hsl(59, 90%, 77%);
+    color: hsla(203, 100%, 5%, 1);
+    background: hsla(59, 90%, 77%, 75%);
 }
 
 .ftRowNode[highlighted=true]:not(.ftFocused):not(.ftSelected) > .ftItemRow:hover > .ftItemRowContent {
-    background: hsl(59, 100%, 79%);
+    background: hsla(59, 100%, 79%, 75%);
     border: 1px solid hsl(59, 90%, 48%);
 }
 
 .ftRowNode[highlighted=true].ftFocused > .ftItemRow > .ftItemRowContent,
 .ftRowNode[highlighted=true].ftSelected > .ftItemRow > .ftItemRowContent {
+    color: hsla(203, 100%, 5%, 1);
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, hsl(59, 90%, 55%)),color-stop(1, white));
     border: 1px solid hsl(59, 90%, 35%);
 }
