@@ -39,7 +39,7 @@
     box-flex: 1.0;
  }
 
-.ftItemRowContent {
+.ftItemRowContent { /* all active items */
     -webkit-box-flex: 1.0;
     box-flex: 1.0;
     border: 1px solid rgba(15, 35, 45, 0);
@@ -47,7 +47,7 @@
     padding-left: 2px;
     padding-top: 0px;
     padding-bottom: 0px;
-    color: rgba(175, 210, 225, 1);
+    /*color: rgba(175, 210, 225, 1);  active items text color */
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 170, 255, 0.14)),color-stop(1, rgba(60, 90, 54, 0)));
 }
 
@@ -175,6 +175,7 @@
 
 .ftCollapsed > .ftItemRow .ftItemTitle {
     font-style: italic;
+    color: rgba(75, 210, 225, 1);
 }
 
 .ftCollapsed > .ftChildren {
